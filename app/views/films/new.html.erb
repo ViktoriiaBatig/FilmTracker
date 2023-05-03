@@ -1,0 +1,38 @@
+<%= form_with(model: @film, url: films_path, local: true, html: {class: "d-flex flex-column align-items-center"}) do |form| %>
+  <div class="form-group mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control form-control-sm rounded-pill" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :year, class: "form-label" %>
+    <%= form.number_field :year, class: "form-control form-control-sm rounded-pill" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :describtion, class: "form-label" %>
+    <%= form.text_area :describtion, class: "form-control form-control-sm rounded-pill" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :length, class: "form-label" %>
+    <%= form.number_field :length, class: "form-control form-control-sm rounded-pill" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :rating, class: "form-label" %>
+    <%= form.number_field :rating, class: "form-control form-control-sm rounded-pill", step: "0.1" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :actor, class: "form-label" %>
+    <%= form.text_field :actor, class: "form-control form-control-sm rounded-pill" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :director, class: "form-label" %>
+    <%= form.text_field :director, class: "form-control form-control-sm rounded-pill" %>
+  </div>
+
+  <%= form.submit "Create", class: "btn btn-secondary rounded-pill" %>
+<% end %>

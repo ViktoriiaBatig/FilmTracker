@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <h2 class="text-center mt-5">Watchlist</h2>
+  <div class="row mt-4">
+    <div class="col-md-8 mx-auto">
+      <ul class="list-group">
+        <% @films.each do |film| %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <%= link_to("#{film.name} (#{film.year})", film_path(film), class: "text-decoration-none text-secondary") %>
+            <%= link_to("Delete", film_path(film), method: :delete, data: { confirm: 'Are you sure you want to delete this film?' }, class: "btn btn-danger btn-sm rounded") %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="pagination justify-content-center my-3">
+    <%= will_paginate @films %>
+  </div>
+  <div class="container-fluid">
+    <h2 class="text-center mt-5">To create a new film, click the button below</h2>
+    <div class="d-flex justify-content-center mt-5">
+      <%= link_to "Create New Film", new_film_path, class: "btn btn-secondary btn-lg" %>
+    </div>
+  </div>
+</div>
